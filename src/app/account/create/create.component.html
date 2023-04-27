@@ -1,0 +1,14 @@
+<div class="d-flex flex-row bd-highlight mb-9">
+  <div class="p-2 w-100 bd-highlight">
+
+    <div class="input-group mb-12">
+      <span class="input-group-text">User ID</span>
+      <input type="text" class="form-control" [(ngModel)]="UserId">
+      <span class="input-group-text">Initial Amount</span>
+      <input type="text" class="form-control" [(ngModel)]="InitialAmount">
+    </div>
+  </div>
+</div>
+<button (click)="createAccount()" *ngIf="acc.AccountId == '0'" class="btn btn-primary">
+  Add
+</button>
