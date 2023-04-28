@@ -13,7 +13,9 @@ export class ShowComponent implements OnInit {
   AccountList: any = [];
   ModalTitle = "";
   ActivateAddEditDepartComp: boolean = false;
+  ActivateDepositWithdrawComp: boolean = false;
   account: any;
+  trans: any;
 
   AccountIdFilter = "";
   AccountNameFilter = "";
@@ -25,24 +27,32 @@ export class ShowComponent implements OnInit {
 
   createClick() {
     this.account = {
-      AccountId: "",
-      AccountName: ""
+      AccountId: "0"
     }
     this.ModalTitle = "Create Account";
     this.ActivateAddEditDepartComp = true;
+    this.ActivateDepositWithdrawComp = false;
     this.refreshAccountList();
   }
 
   depositClick(item: any) {
+    this.trans = {
+      Deposit: "1",
+      AccountId: item.idAccount
+    }
     this.account = item;
     this.ModalTitle = "Deposit Account";
-    this.ActivateAddEditDepartComp = true;
+    this.ActivateDepositWithdrawComp = true;
   }
 
   withdrawClick(item: any) {
+    this.trans = {
+      Deposit: "2",
+      AccountId: item.idAccount
+    }
     this.account = item;
     this.ModalTitle = "WithDraw Account";
-    this.ActivateAddEditDepartComp = true;
+    this.ActivateDepositWithdrawComp = true;
   }
 
   deleteClick(item: any) {

@@ -7,10 +7,10 @@
     </div>
   </div>
 </div>
-<button (click)="withdrawAccount()" *ngIf="trans.AccountId == '0'" class="btn btn-primary">
-  Add
+<button (click)="depositAccount()" *ngIf="trans.Deposit == '1'" class="btn btn-primary">
+  Deposit
 </button>
 
-<button (click)="depositAccount()" *ngIf="trans.AccountId !='0'" class="btn btn-primary">
-  Update
+<button (click)="withdrawAccount()" *ngIf="trans.Deposit =='2'" class="btn btn-primary">
+  Withdraw
 </button>
