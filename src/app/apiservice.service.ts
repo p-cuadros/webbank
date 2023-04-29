@@ -6,7 +6,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiserviceService {
-  readonly apiUrl = 'http://localhost:5164/api/';
+  readonly apiUrl = process.env['URL'] || 'http://localhost:5164/api/';
   constructor(private http: HttpClient) { }
 
   getAccountsByUserList(): Observable<any[]> {
